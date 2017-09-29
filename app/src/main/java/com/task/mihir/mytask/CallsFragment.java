@@ -8,9 +8,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 
-public class CallsFragment extends Fragment{
+public class CallsFragment extends Fragment implements View.OnClickListener {
 
 
     public CallsFragment() {
@@ -28,7 +31,11 @@ public class CallsFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calls, container, false);
+        View v = inflater.inflate(R.layout.fragment_calls, container, false);
+        ImageButton createGroupBtn = (ImageButton) v.findViewById(R.id.createGroupBtn);
+        createGroupBtn.setOnClickListener(this);
+
+        return v;
     }
 
     @Override
@@ -38,5 +45,12 @@ public class CallsFragment extends Fragment{
     }
 
 
+    @Override
+    public void onClick(View view) {
+        createGroup();
+    }
 
+    private void createGroup() {
+
+    }
 }

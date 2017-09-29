@@ -4,8 +4,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class firstHomeScreen extends AppCompatActivity {
+public class firstHomeScreen extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +19,6 @@ public class firstHomeScreen extends AppCompatActivity {
         viewPager.setOffscreenPageLimit(3);
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
-
-
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -25,12 +26,17 @@ public class firstHomeScreen extends AppCompatActivity {
         CallsFragment callsFragment=new CallsFragment();
         ChatFragment  chatFragment=new ChatFragment();
         ContactsFragment contactsFragment=new ContactsFragment();
-        adapter.addFragment(callsFragment,"CALLS");
+        adapter.addFragment(callsFragment,"GROUPS");
         adapter.addFragment(chatFragment,"CHAT");
         adapter.addFragment(contactsFragment,"CONTACTS");
         viewPager.setAdapter(adapter);
+
     }
 
 
+    @Override
+    public void onClick(View view) {
+        Toast.makeText(this, "Clicked" , Toast.LENGTH_SHORT).show();
+    }
 }
 

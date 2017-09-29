@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".signUpPage" />
-        <activity android:name=".firstHomeScreen"></activity>
+        <activity android:name=".firstHomeScreen" />
+        <activity android:name=".firstAfterLogin"></activity>
     </application>
 
 </manifest>
